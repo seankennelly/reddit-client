@@ -35,7 +35,7 @@ function Header({subReddit, setSubReddit, setArticles}) {
       }
     };
     fetchData();
-  }, [subReddit]);
+  }, [subReddit, setArticles]);
 
   const handleChange = (e) => {
     setSubReddit(e.target.value);
