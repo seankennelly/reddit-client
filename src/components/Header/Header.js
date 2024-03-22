@@ -1,25 +1,6 @@
 import React, { useEffect } from "react";
 
-function Header({subReddit, setSubReddit, setArticles}) {
-
-  /* PREVIOUS FETCH */
-  // useEffect(() => {
-  //   fetch("https://www.reddit.com/r/" + props.subReddit + ".json").then(
-  //     (response) => {
-  //       if (response.status !== 200) {
-  //         console.log("RECOGNISABLE ERROR");
-  //         return;
-  //       }
-
-  //       response.json().then((data) => {
-  //         if (data !== null) {
-  //           props.setArticles(data.data.children);
-  //         }
-  //       });
-  //     }
-  //   );
-  // }, [props.subReddit]);
-
+function Header({ subReddit, setSubReddit, setArticles }) {
   useEffect(() => {
     const fetchData = async () => {
       if (subReddit) {
@@ -49,18 +30,20 @@ function Header({subReddit, setSubReddit, setArticles}) {
   return (
     <header>
       <a href="https://reddit.com">
-        <img src={require("./reddit_logo.png")} alt="Logo for Reddit.com"/>
+        <img
+          src={require("./reddit_logo.png")}
+          alt="Logo for Reddit.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        />
       </a>
       <h1>Reddit Micro</h1>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          className="input"
-          value={subReddit}
-          onChange={handleChange}
-        />
-        <button type="submit">Submit</button>
-      </form>
+      <input
+        type="text"
+        className="input"
+        value={subReddit}
+        onChange={handleChange}
+      />
     </header>
   );
 }

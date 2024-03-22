@@ -8,7 +8,7 @@ function App() {
   
   return (
     <div className="App">
-      <Header subReddit={subReddit} setSubReddit={setSubReddit} articles={articles} setArticles={setArticles}/>
+      <Header subReddit={subReddit} setSubReddit={setSubReddit} setArticles={setArticles}/>
       <section className="articles">
         {articles != null
           ? articles.map((article, index) => (

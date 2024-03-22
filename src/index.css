@@ -3,6 +3,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "M PLUS Rounded 1c", sans-serif;
+  background-color: black;
+  color: white;
 }
 
 html {
@@ -33,22 +35,50 @@ h1 {
 input {
   max-width: 300px;
   margin: 1rem auto 2rem;
+  padding: 0.25rem;
+  background-color: white;
+  color: black;
 }
+
+/* -------
+  ARTICLES
+  ------ */
 
 /* section.articles {
 } */
 
 .article {
-  width: 90%;
+  width: 70%;
   margin: 2rem auto;
   padding: 0.5rem;
   font-size: 0.8rem;
-}
-
-article:nth-child(2n) {
-  background-color: #f3f3f3;
-}
-
-article:hover {
   background-color: #DF4C2C;
+  border-radius: 5px;
+}
+
+
+h3 {
+  font-size: 1.3rem;
+  background-color: #DF4C2C;
+}
+
+p {
+  background-color: #DF4C2C;
+}
+
+article:nth-child(2n),
+article:nth-child(2n) h3,
+article:nth-child(2n) p
+{
+  background-color: #c6644e;
+}
+
+article:hover,
+article:hover h3, 
+article:hover p {
+  background-color: #df792c;
+}
+
+article img {
+  width: 100%;
 }
