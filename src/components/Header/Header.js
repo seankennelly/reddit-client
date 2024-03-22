@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
 function Header(props) {
-  const [responseData, setResponseData] = useState(null);
 
+  /* PREVIOUS DISUSED FETCH REQUEST */
   // useEffect(() => {
   //   fetch("https://www.reddit.com/r/" + props.subReddit + ".json").then(
   //     (response) => {
@@ -19,8 +19,6 @@ function Header(props) {
   //     }
   //   );
   // }, [props.subReddit]);
-
-  // CHAT GPT
 
   useEffect(() => {
     const fetchData = async () => {
@@ -45,11 +43,8 @@ function Header(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can handle form submission logic here if needed
     props.setSubReddit(e.target.value);
   };
-
-  // END CHAT GPT
 
   return (
     <header>
