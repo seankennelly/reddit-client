@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import Header from "./components/Header/Header";
+import Article from "./components/Article";
 
 function App() {
+  const [subReddit, setSubReddit] = useState("storyofseasons");
+  const [articles, setArticles] = useState([]);
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header subReddit={subReddit} setSubReddit={setSubReddit} articles={articles} setArticles={setArticles}/>
+      <section className="articles">
+        {articles != null
+          ? articles.map((article, index) => (
+              <Article key={index} article={article.data} className="article"/>
+            ))
+          : ""}
+      </section>
     </div>
   );
 }
